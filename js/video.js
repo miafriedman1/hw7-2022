@@ -19,7 +19,7 @@ window.addEventListener("load", function() {
 // Adding eventlistener to play video only when the play button is clicked and give console signal
 play.addEventListener("click", function(){
 	video.play();
-	current_volume.innerHTML = (video.volume * 100);
+	current_volume.innerHTML = (video.volume * 100)+"%";
 	console.log("Playing Video")
 })
 
@@ -61,13 +61,13 @@ mute.addEventListener("click", function() {
 		video.muted = true;
 		mute.innerHTML = "Unmute";
 		console.log("Video Muted")
-		current_volume.innerHTML = "0"
+		current_volume.innerHTML = "0%"
  	}
 
  	else {
 	 	video.muted = false;
 	 	mute.innerHTML = "Mute";
-		current_volume.innerHTML = (video.volume * 100);
+		current_volume.innerHTML = (video.volume * 100)+"%";
 	 	console.log("Video Unmuted")
  	}
 });
@@ -75,7 +75,7 @@ mute.addEventListener("click", function() {
 // Adding eventlistener to change the audio volume when you move the slider and update the volume information on the page and in the console
 slider.addEventListener("change", function(x) {
 	video.volume = (slider.value/100);
-	current_volume.innerHTML = (video.volume * 100);
+	current_volume.innerHTML = (video.volume * 100)+"%";
 	console.log("Volume is "+(video.volume * 100));
 });
 
